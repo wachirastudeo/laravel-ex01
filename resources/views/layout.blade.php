@@ -15,7 +15,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="#">หน้าแรก</a>
+                <a class="nav-link " aria-current="page" href="/">หน้าแรก</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('blog') }}">บทความทั้งหมด</a>
