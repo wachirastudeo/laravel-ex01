@@ -8,3 +8,5 @@ Route::get('/', function () {
 });
 
 Route::get('blog', [AdminController::class, 'index'])->name('blog');
+
+Route::get('create', [AdminController::class, 'create']);

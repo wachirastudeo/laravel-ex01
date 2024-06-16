@@ -28,4 +28,8 @@ class AdminController extends Controller
         ];
         return view('blog', compact('blogs'));
     }
+    function create()
+    {
+        return view('form');
+    }
 }
