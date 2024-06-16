@@ -35,9 +35,17 @@ class AdminController extends Controller
     function insert(Request $request)
 
     {
-        $request->validate([
-            'title' => 'required|max 50',
-            'content' => 'required'
-        ]);
+        $request->validate(
+            [
+                'title' => 'required|max 50',
+                'content' => 'required'
+            ],
+            [
+                'title.required' => 'กรุณากรอกชื่อบทความ',
+                'title.max' => 'ชื่อบทความไม่ควรเกิน 50 ตัวอักษร',
+                'content.required' => 'กรุณากรอกเนื้อหาบทความ'
+
+            ]
+        );
     }
 }

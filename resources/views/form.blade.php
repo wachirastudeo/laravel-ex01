@@ -11,7 +11,7 @@
             <input type="text" class="form-control" id="title" name="title">
             @error('title')
                 <div>
-                    <span>{{ $message }}</span>
+                    <span class="text text-danger">{{ $message }}</span>
                 </div>
             @enderror
         </div>
@@ -20,7 +20,7 @@
             <textarea class="form-control" id="content" rows="3" name="content"></textarea>
             @error('content')
                 <div>
-                    <span>{{ $message }}</span>
+                    <span class="text text-danger">{{ $message }}</span>
                 </div>
             @enderror
         </div>
