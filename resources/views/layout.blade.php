@@ -30,7 +30,6 @@
         </div>
       </nav>
     <div class="container py-5">
-        <h1>@yield('title')</h1>
         @yield('content')
    
     </div>
