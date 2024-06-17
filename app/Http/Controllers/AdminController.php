@@ -41,28 +41,28 @@ class AdminController extends Controller
             'title' => $request->title,
             'content' => $request->content,
         ];
-        DB::table('blogs')->insert($data);
+        Blog::insert($data);
         return redirect('/blog');
     }
     function delete($id)
     {
-        DB::table('blogs')->where('id', $id)->delete();
-        return redirect('/blog');
+        Blog::find($id)->delete();
+        return redirect()->back();
     }
     function change($id)
     {
-        $blog = DB::table('blogs')->where('id', $id)->first();
+        $blog = Blog::find($id)->first();
         $data = [
             'status' => !$blog->status
         ];
 
-        DB::table('blogs')->where('id', $id)->update($data);
+        Blog::find($id)->update($data);
         return redirect('/blog');
     }
 
     function edit($id)
     {
-        $blogs = DB::table('blogs')->where('id', $id)->first();
+        $blogs = Blog::find($id);
 
         return view('edit', compact('blogs'));
     }
@@ -84,7 +84,8 @@ class AdminController extends Controller
             'title' => $request->title,
             'content' => $request->content,
         ];
-        DB::table('blogs')->where('id', $id)->update($data);
+
+        Blog::find($id)->update($data);
         return redirect('/blog');
     }
 }
