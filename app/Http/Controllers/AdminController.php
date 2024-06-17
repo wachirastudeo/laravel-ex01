@@ -22,7 +22,7 @@ class AdminController extends Controller
     {
         $request->validate(
             [
-                'title' => 'required|max 50',
+                'title' => 'required|max:50',
                 'content' => 'required'
             ],
             [
@@ -32,6 +32,12 @@ class AdminController extends Controller
 
             ]
         );
+        $data = [
+            'title' => $request->title,
+            'content' => $request->content,
+        ];
+        DB::table('blogs')->insert($data);
+        return redirect('/blog');
     }
     function delete($id)
     {
