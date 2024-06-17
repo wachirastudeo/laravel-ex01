@@ -61,4 +61,25 @@ class AdminController extends Controller
 
         return view('edit', compact('blogs'));
     }
+    function update(Request $request, $id)
+    {
+        $request->validate(
+            [
+                'title' => 'required|max:50',
+                'content' => 'required'
+            ],
+            [
+                'title.required' => 'กรุณากรอกชื่อบทความ',
+                'title.max' => 'ชื่อบทความไม่ควรเกิน 50 ตัวอักษร',
+                'content.required' => 'กรุณากรอกเนื้อหาบทความ'
+
+            ]
+        );
+        $data = [
+            'title' => $request->title,
+            'content' => $request->content,
+        ];
+        DB::table('blogs')->where('id', $id)->update($data);
+        return redirect('/blog');
+    }
 }

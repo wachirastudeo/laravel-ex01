@@ -4,7 +4,7 @@
 
 @section('content')
     <h3 class="text text-center"> แก้ไขบทความ</h3>
-    <form method="POST" action="#">
+    <form method="POST" action="{{ route('update', $blogs->id) }}">
         @csrf
         <div class="mb-3 form-group">
             <label for="title" class="form-label">ชื่อบทความ</label>
