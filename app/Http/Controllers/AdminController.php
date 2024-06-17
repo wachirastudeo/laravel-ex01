@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Blog;
 
 class AdminController extends Controller
 {
@@ -14,7 +15,7 @@ class AdminController extends Controller
     }
     function index()
     {
-        $blogs = DB::table('blogs')->paginate(5);
+        $blogs = Blog::paginate(5);
         return view('blog', compact('blogs'));
     }
     function create()
