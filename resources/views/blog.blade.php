@@ -23,12 +23,13 @@
 
                     <th scope="row"> {{ $item->title }} </th>
                     {{-- <td>{{ Str::limit($item->content, 25) }} </td> --}}
-                    <td>
-                        @if ($item->status == true)
-                            <p class="btn btn-success">เผยแพร่</p>
-                        @else
-                            <p class="btn btn-warning">ฉบับร่าง</p>
-                        @endif
+                    <td> <a href="{{ route('change', $item->id) }}">
+                            @if ($item->status == true)
+                                <p class="btn btn-success">เผยแพร่</p>
+                            @else
+                                <p class="btn btn-warning">ฉบับร่าง</p>
+                            @endif
+                        </a>
                     </td>
                     <td>
                         <a href="{{ route('delete', $item->id) }}" class="btn btn-danger"
