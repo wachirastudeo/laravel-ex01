@@ -3,7 +3,12 @@
 
 
 @section('content')
-    <h2>หน้าแรกเว็บไซต์</h2>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores molestiae consequuntur repudiandae eaque quisquam,
-    omnis sequi consectetur deleniti enim, minus neque ipsa illo illum quibusdam repellat fugit in molestias repellendus?
+    <h2>บทความล่าสุด</h2>
+    <hr>
+    @foreach ($blogs as $item)
+        <h2>{{ $item->title }}</h2>
+        <p>{{ Str::limit($item->content, 30) }}</p>
+        <a href="/detail/{{ $item->id }}">อ่านเพิ่มเติม</a>
+        <hr>
+    @endforeach
 @endsection
