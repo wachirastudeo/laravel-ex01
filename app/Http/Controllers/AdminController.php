@@ -10,7 +10,7 @@ class AdminController extends Controller
     //
     function index()
     {
-        $blogs = DB::table('blogs')->get();
+        $blogs = DB::table('blogs')->paginate(5);
         return view('blog', compact('blogs'));
     }
     function create()
