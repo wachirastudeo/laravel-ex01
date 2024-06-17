@@ -3,29 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
     //
     function index()
     {
-        $blogs = [
-            [
-                'title' => 'บทความที่ 1',
-                'content' => 'เนื้อหาบทความที่ 1',
-                'status' => true
-            ],
-            [
-                'title' => 'บทความที่ 2',
-                'content' => 'เนื้อหาบทความที่ 2',
-                'status' => true
-            ],
-            [
-                'title' => 'บทความที่ 3',
-                'content' => 'เนื้อหาบทความที่ 3',
-                'status' => false
-            ],
-        ];
+        $blogs = DB::table('blogs')->get();
         return view('blog', compact('blogs'));
     }
     function create()

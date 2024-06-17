@@ -19,13 +19,13 @@
             @foreach ($blogs as $item)
                 <tr>
 
-                    <th scope="row"> {{ $item['title'] }} </th>
-                    <td>{{ $item['content'] }} </td>
+                    <th scope="row"> {{ $item->title }} </th>
+                    <td>{{ $item->content }} </td>
                     <td>
-                        @if ($item['status'] == 'true')
-                            <p class="text text-success">เผยแพร่</p>
+                        @if ($item->status == true)
+                            <p class="btn btn-success">เผยแพร่</p>
                         @else
-                            <p class="text text-danger">ฉบับร่าง</p>
+                            <p class="btn btn-danger">ฉบับร่าง</p>
                         @endif
                     </td>
 
