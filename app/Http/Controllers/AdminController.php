@@ -42,7 +42,7 @@ class AdminController extends Controller
             'content' => $request->content,
         ];
         Blog::insert($data);
-        return redirect('/blog');
+        return redirect('/author/blog');
     }
     function delete($id)
     {
@@ -51,13 +51,13 @@ class AdminController extends Controller
     }
     function change($id)
     {
-        $blog = Blog::find($id)->first();
+        $blog = Blog::find($id);
         $data = [
             'status' => !$blog->status
         ];
 
         Blog::find($id)->update($data);
-        return redirect('/blog');
+        return redirect()->back();
     }
 
     function edit($id)
@@ -86,6 +86,6 @@ class AdminController extends Controller
         ];
 
         Blog::find($id)->update($data);
-        return redirect('/blog');
+        return redirect()->back();
     }
 }
