@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 Route::get('blog', [AdminController::class, 'index'])->name('blog');
 
-Route::get('create', [AdminController::class, 'create']);
+Route::get('create', [AdminController::class, 'create'])->name('create');
 Route::post('insert', [AdminController::class, 'insert']);
 
 Route::get('delete/{id}', [AdminController::class, 'delete'])->name('delete');
