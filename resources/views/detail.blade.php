@@ -6,5 +6,5 @@
 @section('content')
     <h2>{{ $blog->title }}</h2>
     <hr>
-    <p>{{ $blog->content }}</p>
+    <p>{!! $blog->content !!}</p>
 @endsection

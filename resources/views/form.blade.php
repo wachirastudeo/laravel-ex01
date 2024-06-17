@@ -29,4 +29,12 @@
             <a href="/blog " class="btn btn-success m-3">บทความทั้งหมด</a>
         </div>
     </form>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#content'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
 @endsection
