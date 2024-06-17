@@ -27,9 +27,12 @@
                             @if ($item->status == true)
                                 <p class="btn btn-success">เผยแพร่</p>
                             @else
-                                <p class="btn btn-warning">ฉบับร่าง</p>
+                                <p class="btn btn-secondary">ฉบับร่าง</p>
                             @endif
                         </a>
+                    </td>
+                    <td>
+                        <a href="{{ route('edit', $item->id) }}" class="btn btn-warning">แก้ไข</a>
                     </td>
                     <td>
                         <a href="{{ route('delete', $item->id) }}" class="btn btn-danger"
